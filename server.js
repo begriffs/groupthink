@@ -5,6 +5,7 @@ var express = require('express'),
 
 io.sockets.on('connection', function (socket) {
   socket.on('vote', function (data) {
+    socket.broadcast.emit('vote', data);
     console.log(data);
   });
 });
@@ -18,6 +19,6 @@ app.get('/', function(req, res) {
   res.render('index');
 });
 
-app.listen(8080, function() {
+server.listen(8080, function() {
   console.log("Listening on 8080");
 });
