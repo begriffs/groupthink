@@ -1,3 +1,0 @@
-[submodule "public/scripts/decaying-accumulator"]
-	path = public/scripts/decaying-accumulator
-	url = git@github.com:begriffs/decaying-accumulator.git
