@@ -10,10 +10,10 @@ io.sockets.on('connection', function (socket) {
   });
 });
 
-app.set('views', __dirname + '/views')
-app.set('view engine', 'jade')
+app.set('views', __dirname + '/views');
+app.set('view engine', 'jade');
 
-app.use(express.static(__dirname + '/public'))
+app.use(express.static(__dirname + '/public'));
 
 app.get('/', function(req, res) {
   res.render('index');

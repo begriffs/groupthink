@@ -37,5 +37,5 @@ require(['jquery', 'socket.io', 'decaying-accumulator'], function ($, io, Decayi
       socket.emit('vote', vote);
       dac.nudge(vote);
     });
-  })
+  });
 });
