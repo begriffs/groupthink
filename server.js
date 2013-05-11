@@ -16,9 +16,9 @@ app.set('view engine', 'jade');
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', function(req, res) {
-  res.render('index');
+  res.render('index', {environment: app.settings.env});
 });
 
 server.listen(8080, function() {
-  console.log("Listening on 8080");
+  console.log("Express server listening in %s mode", app.settings.env);
 });

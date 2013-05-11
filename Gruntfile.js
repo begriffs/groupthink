@@ -6,32 +6,38 @@ module.exports = function(grunt) {
     jshint: {
       all: ['*.js', 'public/scripts/main.js']
     },
-    uglify: {
-      options: {
-        banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
-      },
-      build: {
-        src: 'src/<%= pkg.name %>.js',
-        dest: 'build/<%= pkg.name %>.min.js'
-      }
-    },
     requirejs: {
       compile: {
         options: {
+          name: 'components/almond/almond',
+          include: "main",
           baseUrl: "public/scripts",
           mainConfigFile: "public/scripts/main.js",
-          out: "public/scripts/optimized.js"
+          out: "public/scripts/optimized.js",
+          uglify: {
+            toplevel: true,
+            ascii_only: true,
+            max_line_length: 1000,
+
+            //How to pass uglifyjs defined symbols for AST symbol replacement,
+            //see "defines" options for ast_mangle in the uglifys docs.
+            defines: {
+                DEBUG: ['name', 'false']
+            },
+
+            //Custom value supported by r.js but done differently
+            //in uglifyjs directly:
+            //Skip the processor.ast_mangle() part of the uglify call (r.js 2.0.5+)
+            no_mangle: true
+          }
         }
       }
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
 
-  // Default task(s).
-  grunt.registerTask('default', ['uglify']);
-  grunt.registerTask('optimize', ['requirejs', 'uglify']);
+  grunt.registerTask('optimize', ['jshint', 'requirejs']);
 
 };

@@ -5,12 +5,8 @@ requirejs.config({
     }
   },
   paths: {
-    jquery: [
-      'components/jquery/jquery'
-    ],
-    'socket.io': [
-      'components/socket.io-client/dist/socket.io'
-    ],
+    'jquery': 'components/jquery/jquery',
+    'socket.io': 'components/socket.io-client/dist/socket.io',
     'decaying-accumulator': 'decaying-accumulator/DecayingAccumulator'
   }
 });
