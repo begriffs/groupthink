@@ -13,5 +13,17 @@ requirejs.config({
 });
 
 require(['jquery', 'socket.io', 'decaying-accumulator'], function ($, io, DecayingAccumulator) {
-  $('body').append('<div>' + typeof DecayingAccumulator + '</div>')
+  $(function () {
+    var dac = new DecayingAccumulator(10000);
+    window.setInterval(
+      function () {
+        $('meter').val(dac.currentValue());
+      },
+      50
+    );
+
+    $('button').click(function () {
+      dac.nudge($(this).data('vote'));
+    });
+  })
 });
