@@ -7,4 +7,5 @@ realtime guage.
 ### Running the server
 
     npm install
+    bower install
     foreman start

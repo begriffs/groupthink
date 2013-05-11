@@ -4,9 +4,15 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "express": "~3.2.2",
-    "jade": "~0.30.0",
-    "socket.io": "~0.9.14"
+    "express": "3.2.2",
+    "jade": "0.30.0",
+    "socket.io": "0.9.14"
+  },
+  "devDependencies": {
+    "grunt": "0.4.1",
+    "grunt-contrib-uglify": "0.2.0",
+    "grunt-contrib-requirejs": "0.4.0",
+    "grunt-contrib-jshint": "0.4.3"
   },
   "engines": {
     "node": "0.10.x",
