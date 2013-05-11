@@ -3,6 +3,9 @@ html(lang="en")
   head
     meta(charset="utf-8")
     meta(name="viewport", content="width=device-width")
-    title Full Stack JS Demo
+    script(data-main="scripts/main", src="scripts/require.js")
+    title Change the Pace
   body
-    p Full Stack JS Demo
+    p
+      input(type="text", name="room")
+      button(id="join") Join Room
