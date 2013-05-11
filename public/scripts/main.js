@@ -7,10 +7,11 @@ requirejs.config({
     'socket.io': [
       'https://cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.10/socket.io.min',
       'cdn-fallback/socket.io'
-    ]
+    ],
+    'decaying-accumulator': 'decaying-accumulator/DecayingAccumulator'
   }
 });
 
-require(['jquery', 'socket.io'], function ($, io) {
-  $('body').append('<div>hi</div>')
+require(['jquery', 'socket.io', 'decaying-accumulator'], function ($, io, DecayingAccumulator) {
+  $('body').append('<div>' + typeof DecayingAccumulator + '</div>')
 });
