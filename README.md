@@ -8,6 +8,7 @@ realtime guage.
 
     npm install
     bower install
-    foreman start
     brew install mongodb
     mongod
+
+    node server.js
