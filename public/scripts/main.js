@@ -7,19 +7,22 @@ requirejs.config({
   paths: {
     'jquery': 'components/jquery/jquery',
     'socket.io': 'components/socket.io-client/dist/socket.io',
-    'decaying-accumulator': 'decaying-accumulator/DecayingAccumulator'
+    'decaying-accumulator': 'components/decaying-accumulator/DecayingAccumulator'
   }
 });
 
 require(['jquery', 'socket.io', 'decaying-accumulator'], function ($, io, DecayingAccumulator) {
   $(function () {
-    var dac = new DecayingAccumulator(10000);
-    window.setInterval(
-      function () {
-        $('meter').val(dac.currentValue());
-      },
-      50
-    );
+    var dac;
+    $.getJSON('/status.json', function (data) {
+      dac = new DecayingAccumulator(data);
+      window.setInterval(
+        function () {
+          $('meter').val(dac.currentValue());
+        },
+        50
+      );
+    });
 
     var socket = io.connect('http://' + window.location.hostname);
     socket.on('vote', function (data) {
