@@ -5,10 +5,6 @@ requirejs.config({
     }
   },
   paths: {
-    'jquery': '../components/jquery/jquery',
-    'socket.io': '../components/socket.io-client/dist/socket.io',
-    'decaying-accumulator': '../components/decaying-accumulator/DecayingAccumulator',
-
     /**
       This library has issues being used as a shim. The eve dependency was not appearing. Beyond that
       it has a crazy amount of methods leaked into global scope. Changed lib to be an amd module.
@@ -21,7 +17,10 @@ requirejs.config({
       the update until it is official.
     */
     'eve': 'eve',
-    'raphael': 'raphael'
+    'raphael': 'raphael',
+    'jquery': 'components/jquery/jquery',
+    'socket.io': 'components/socket.io-client/dist/socket.io',
+    'decaying-accumulator': 'components/decaying-accumulator/DecayingAccumulator'
   }
 });
 
@@ -76,13 +75,16 @@ require(['jquery', 'socket.io', 'decaying-accumulator', 'justgage'], function ($
   });
 
   $(function () {
-    var dac = new DecayingAccumulator(10000);
-    window.setInterval(
-      function () {
-        //speedGage.refresh(dac.currentValue());
-      },
-      50
-    );
+    var dac;
+    $.getJSON('/status.json', function (data) {
+      dac = new DecayingAccumulator(data);
+      window.setInterval(
+        function () {
+          speedGage.refresh(dac.currentValue());
+        },
+        50
+      );
+    });
 
     var socket = io.connect('http://' + window.location.hostname);
     socket.on('vote', function (data) {

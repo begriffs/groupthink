@@ -7,7 +7,9 @@
     "express": "3.2.2",
     "jade": "0.30.0",
     "socket.io": "0.9.14",
-    "stylus": "0.32.1"
+    "stylus": "0.32.1",
+    "mongoose": "3.6.10",
+    "decaying-accumulator": "0.0.4"
   },
   "devDependencies": {
     "grunt": "0.4.1",
@@ -15,7 +17,11 @@
     "grunt-contrib-jshint": "0.4.3"
   },
   "engines": {
-    "node": "0.10.x",
+    "node": "0.8.x",
     "npm": "1.2.x"
+  },
+  "subdomain": "begriffs-pace",
+  "scripts": {
+    "start": "node server.js"
   }
 }
