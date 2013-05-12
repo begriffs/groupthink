@@ -20,4 +20,8 @@ button,input[type="button"],input[type="reset"],input[type="submit"]{cursor:poin
 input[type="search"]{-webkit-appearance:textfield;-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box}
 input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}
 textarea{overflow:auto;vertical-align:top}
-#gauge{width:75%}
+#gauge{width:75%;height:75%;margin:0 auto}
+#gauge-actions{width:30%;margin:0 auto;text-align:center}
+a.slower,a.faster{display:inline-block;padding:.6em;margin:.6em}
+a.slower:before,a.slower:after{content:" ";width:0;height:0;top:2.08em;border:2em solid transparent;border-right-color:#000;border-right-width:#000 2.16em}
+a.faster:before,a.faster:after{content:" ";width:0;height:0;top:2.08em;border:2em solid transparent;border-left-color:#000;border-left-width:#000 2.16em}

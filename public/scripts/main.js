@@ -89,7 +89,9 @@ require(['jquery', 'socket.io', 'decaying-accumulator', 'justgage'], function ($
       dac.nudge(data);
     });
 
-    $('a[data-vote]').click(function () {
+    $('a[data-vote]').click(function (e) {
+      e.preventDefault();
+
       var vote = $(this).data('vote');
       socket.emit('vote', vote);
       dac.nudge(vote);
