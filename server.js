@@ -14,10 +14,11 @@ io.sockets.on('connection', function (socket) {
 // This must be BEFORE other app.use
 app.use(stylus.middleware({
   debug: true,
-  src: __dirname + '/stylus',
-  dest: __dirname + '/public/style',
-  compile: function (str) {
+  src: __dirname + '/views',
+  dest: __dirname + '/public',
+  compile: function (str, path) {
     return stylus(str)
+      .set('warn', true)
       .set('paths', ['stylus'])
       .set('compress', true);
   }

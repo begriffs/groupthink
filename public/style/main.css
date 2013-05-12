@@ -20,3 +20,4 @@ button,input[type="button"],input[type="reset"],input[type="submit"]{cursor:poin
 input[type="search"]{-webkit-appearance:textfield;-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box}
 input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}
 textarea{overflow:auto;vertical-align:top}
+#gauge{width:75%}
