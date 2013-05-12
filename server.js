@@ -19,7 +19,7 @@ app.use(stylus.middleware({
   compile: function (str, path) {
     return stylus(str)
       .set('warn', true)
-      .set('paths', ['stylus'])
+      .set('paths', ['views/style'])
       .set('compress', true);
   }
 }));
