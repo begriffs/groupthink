@@ -1,7 +1,8 @@
 var express = require('express'),
   app       = express(),
   server    = require('http').createServer(app),
-  io        = require('socket.io').listen(server);
+  io        = require('socket.io').listen(server),
+  stylus    = require('stylus');
 
 io.sockets.on('connection', function (socket) {
   socket.on('vote', function (data) {
@@ -10,15 +11,27 @@ io.sockets.on('connection', function (socket) {
   });
 });
 
+// This must be BEFORE other app.use
+app.use(stylus.middleware({
+  debug: true,
+  src: __dirname + '/stylus',
+  dest: __dirname + '/public/style',
+  compile: function (str) {
+    return stylus(str)
+      .set('paths', ['stylus'])
+      .set('compress', true);
+  }
+}));
+
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
 
 app.use(express.static(__dirname + '/public'));
 
-app.get('/', function(req, res) {
+app.get('/', function (req, res) {
   res.render('index', {environment: app.settings.env});
 });
 
-server.listen(8080, function() {
+server.listen(8080, function () {
   console.log("Express server listening in %s mode", app.settings.env);
 });
