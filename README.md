@@ -15,6 +15,8 @@ realtime guage.
 
 ### Deploying to nodejitsu
 
+    npm install
+    grunt optimize
     npm install jitsu -g
     jitsu signup
     jitsu login
