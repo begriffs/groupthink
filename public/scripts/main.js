@@ -26,6 +26,9 @@ requirejs.config({
 
 require(['jquery', 'socket.io', 'decaying-accumulator', 'justgage'], function ($, io, DecayingAccumulator, JustGage) {
 
+  // Allows for anchor active state in css on mobile devices
+  document.addEventListener("touchstart", function () {}, true);
+
   var speedGage = new JustGage({
     id: "gauge",
     value: 0,
@@ -48,12 +51,12 @@ require(['jquery', 'socket.io', 'decaying-accumulator', 'justgage'], function ($
         color : "#ff0000",
         lo : -1,
         hi : -0.8,
-        label: 'way too slow'
+        label: 'way too fast'
       }, {
         color : "#fa9001",
         lo : -0.8,
         hi : -0.2,
-        label: 'too slow'
+        label: 'too fast'
       }, {
         color : "#00ff00",
         lo : -0.2,
@@ -63,12 +66,12 @@ require(['jquery', 'socket.io', 'decaying-accumulator', 'justgage'], function ($
         color : "#fa9001",
         lo : 0.2,
         hi : 0.8,
-        label: 'too fast'
+        label: 'too slow'
       }, {
         color : "#ff0000",
         lo : 0.8,
         hi : 1,
-        label: 'way too fast'
+        label: 'way too slow'
       }
     ],
     title: "Speed"

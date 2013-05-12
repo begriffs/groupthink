@@ -2,7 +2,7 @@
 html(lang="en")
   head
     meta(charset="utf-8")
-    meta(name="viewport", content="width=device-width")
+    meta(name="viewport", content="width=device-width, initial-scale=1, user-scalable=0")
     - if(environment == "production")
       script(src="scripts/optimized.js")
     - else
@@ -14,6 +14,8 @@ html(lang="en")
 
     div#gauge-actions
       a(href="#", class="slower", data-vote="-1") 
-        span Slower
-      a(href="#", class="faster", data-vote="1") 
-        span Faster
+        i Slower
+        span 
+      a(href="#", class="faster", data-vote="1")
+        i Faster
+        span
