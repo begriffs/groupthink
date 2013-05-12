@@ -5,7 +5,7 @@ var express = require('express'),
   io        = require('socket.io').listen(server),
   dac_truth = new (require('decaying-accumulator'))(10000);
 
-mongoose.connect('mongodb://localhost/pace');
+mongoose.connect(process.env.MONGO_CONNECTION || 'mongodb://localhost/pace');
 
 io.sockets.on('connection', function (socket) {
   socket.on('vote', function (data) {
