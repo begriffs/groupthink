@@ -28,7 +28,7 @@ require(['jquery', 'socket.io', 'decaying-accumulator', 'justgage'], function ($
 
   var speedGage = new JustGage({
     id: "gauge",
-    value: -0.7,
+    value: 0,
     min: -1,
     max: 1,
     hideMinMax: true,
