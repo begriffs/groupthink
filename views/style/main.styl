@@ -5,35 +5,64 @@
 @import "mixins"
 
 #gauge
-  width 75%
-  height 75%
+  height 400px
   margin 0 auto
 
 #gauge-actions
-  width 30%
-  margin 0 auto
+  margin-top -20px
   text-align center
+  position
 
 a.slower,
 a.faster
+  font-family helvetica, sans-serif
   display inline-block
+  position relative
   padding 0.6em
-  margin 0.6em
+  margin 0 3.6em
+  text-decoration none
+  color #FFF
+  text-shadow #333 1px 1px 0
 
-a.slower:before, a.slower:after
-  content " "
-  width 0
-  height 0
-  top 2.08em
-  border 2em solid transparent
-  border-right-color black
-  border-right-width black 2.16em
+  span
+    z-index 100
 
-a.faster:before, a.faster:after
-  content " "
-  width 0
-  height 0
-  top 2.08em
-  border 2em solid transparent
-  border-left-color black
-  border-left-width black 2.16em
+a.slower
+  span:before, span:after
+    position absolute
+    content ""
+    width 0
+    height 0
+    border-top 2em solid transparent
+    border-bottom 2em solid transparent
+    border-right 4em solid #888
+    right 0
+    top -0.9em
+    z-index -1
+
+  span:before
+    right 2em
+
+a.slower:active
+  span:before, span:after
+    border-right-color #333
+
+a.faster
+  span:before, span:after
+    position absolute
+    content ""
+    width 0
+    height 0
+    border-top 2em solid transparent
+    border-bottom 2em solid transparent
+    border-left 4em solid #888
+    left 0
+    top -0.9em
+    z-index -1
+
+  span:after
+    left 2em
+
+a.faster:active
+  span:before, span:after
+    border-left-color #333

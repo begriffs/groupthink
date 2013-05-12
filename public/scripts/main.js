@@ -50,7 +50,7 @@ require(['jquery', 'socket.io', 'decaying-accumulator', 'justgage'], function ($
         hi : -0.8,
         label: 'way too slow'
       }, {
-        color : "#0000ff",
+        color : "#fa9001",
         lo : -0.8,
         hi : -0.2,
         label: 'too slow'
@@ -60,12 +60,12 @@ require(['jquery', 'socket.io', 'decaying-accumulator', 'justgage'], function ($
         hi : 0.2,
         label: 'ok'
       }, {
-        color : "#0000ff",
+        color : "#fa9001",
         lo : 0.2,
         hi : 0.8,
         label: 'too fast'
       }, {
-        color : "#0000ff",
+        color : "#ff0000",
         lo : 0.8,
         hi : 1,
         label: 'way too fast'
