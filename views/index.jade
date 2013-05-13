@@ -3,10 +3,6 @@ html(lang="en")
   head
     meta(charset="utf-8")
     meta(name="viewport", content="width=device-width, initial-scale=1, user-scalable=0")
-    - if(environment == "production")
-      script(src="scripts/optimized.js")
-    - else
-      script(data-main="scripts/main", src="scripts/require.js")
     link(rel="stylesheet", href='/style/main.css', type="text/css")
     title Change the Pace
   body
@@ -19,3 +15,7 @@ html(lang="en")
       a(href="#", class="faster", data-vote="1")
         i Faster
         span
+    - if(environment == "production")
+      script(src="scripts/optimized.js")
+    - else
+      script(data-main="scripts/main", src="scripts/require.js")

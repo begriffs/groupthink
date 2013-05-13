@@ -23,7 +23,7 @@ textarea{overflow:auto;vertical-align:top}
 html{background:transparent url("/images/cubes.png") scroll repeat 0 0}
 body{background-color:#fff;width:500px;margin:0 auto;margin-top:30px;padding-bottom:40px;z-index:-2;-webkit-box-shadow:0 2px 7px -2px #888;-moz-box-shadow:0 2px 7px -2px #888;box-shadow:0 2px 7px -2px #888}
 a{-webkit-tap-highlight-color:rgba(0,0,0,0)}
-#gauge{height:400px;margin:0 auto}
+#gauge{height:400px;width:500px;margin:0 auto}
 #gauge-actions{margin-top:-20px;text-align:center;position}
 a.slower,a.faster{font-family:helvetica,sans-serif;display:inline-block;position:relative;width:40px;padding:.6em;margin:0;text-decoration:none;color:#fff;text-shadow:#333 1px 1px 0;}
 a.slower i,a.faster i{position:absolute;top:50%;right:0;z-index:101}
@@ -38,9 +38,9 @@ a.faster i{right:0}
 a.faster span:before,a.faster span:after{position:absolute;content:"";width:0;height:0;border-top:2em solid transparent;border-bottom:2em solid transparent;border-left:4em solid #888;left:0;top:-.9em}
 a.faster span:after{left:2em}
 a.faster:active span:before,a.faster:active span:after{border-left-color:#333}
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi){html{background:transparent url("/images/cubes_@2X.png") scroll repeat 0 0}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi){html{background:transparent url("/images/cubes_@2X.png") scroll repeat 0 0;background-size:67px 100px}
 }@media only screen and (min-device-width: 320px) and (max-device-width: 480px){body{width:300px;margin-top:10px}
-#gauge{height:300px}
+#gauge{height:300px;width:270px}
 a.slower{margin-right:2.4em}
 a.faster{margin-left:2.4em}
 }
