@@ -1,0 +1,112 @@
+// CSS Reset
+@import "reset"
+
+// Stylus mixins
+@import "mixins"
+
+html 
+  background transparent url('/images/cubes.png') scroll repeat 0 0;
+
+body
+  background-color #FFF
+  width 500px
+  margin 0 auto
+  margin-top 30px
+  padding-bottom 40px
+  z-index: -2;
+  box-shadow(0px 2px 7px -2px #888888);
+
+a
+  -webkit-tap-highlight-color rgba(0,0,0,0)
+
+#gauge
+  height 400px
+  margin 0 auto
+
+#gauge-actions
+  margin-top -20px
+  text-align center
+  position
+
+a.slower,
+a.faster
+  font-family helvetica, sans-serif
+  display inline-block
+  position relative
+  width: 40px
+  padding 0.6em
+  margin 0
+  text-decoration none
+  color #FFF
+  text-shadow #333 1px 1px 0
+
+  i
+    position absolute
+    top 50%
+    right 0
+    z-index 101
+  span:before, span:after
+    z-index 100
+
+a.slower
+  margin-right 3.4em
+  i
+    left -16px
+  span:before, span:after
+    position absolute
+    content ""
+    width 0
+    height 0
+    border-top 2em solid transparent
+    border-bottom 2em solid transparent
+    border-right 4em solid #888
+    right 0
+    top -0.9em
+
+  span:before
+    right 2em
+
+a.slower:active
+  span:before, span:after
+    border-right-color #333
+
+a.faster
+  margin-left 3.4em
+  i
+    right 0
+  span:before, span:after
+    position absolute
+    content ""
+    width 0
+    height 0
+    border-top 2em solid transparent
+    border-bottom 2em solid transparent
+    border-left 4em solid #888
+    left 0
+    top -0.9em
+
+  span:after
+    left 2em
+
+a.faster:active
+  span:before, span:after
+    border-left-color #333
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) 
+  /* Retina-specific stuff here */
+  html
+    background transparent url('/images/cubes_@2X.png') scroll repeat 0 0;
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px)
+  body
+    width 300px
+    margin-top 10px
+
+  #gauge
+    height 300px
+
+  a.slower
+    margin-right 2.4em
+
+  a.faster
+    margin-left 2.4em
