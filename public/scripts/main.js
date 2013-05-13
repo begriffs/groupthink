@@ -29,7 +29,7 @@ require(['jquery', 'socket.io', 'decaying-accumulator', 'justgage'], function ($
   // Allows for anchor active state in css on mobile devices
   document.addEventListener("touchstart", function () {}, true);
 
-  var speedGage = new JustGage({
+  var gageConfig = {
     id: "gauge",
     value: 0,
     min: -1,
@@ -75,10 +75,12 @@ require(['jquery', 'socket.io', 'decaying-accumulator', 'justgage'], function ($
       }
     ],
     title: "Speed"
-  });
+  };
 
   $(function () {
-    var dac;
+    var dac,
+      speedGage = new JustGage(gageConfig);
+
     $.getJSON('/status.json', function (data) {
       dac = new DecayingAccumulator(data);
       window.setInterval(
