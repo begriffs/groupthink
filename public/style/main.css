@@ -38,7 +38,7 @@ a.faster i{right:0}
 a.faster span:before,a.faster span:after{position:absolute;content:"";width:0;height:0;border-top:2em solid transparent;border-bottom:2em solid transparent;border-left:4em solid #888;left:0;top:-.9em}
 a.faster span:after{left:2em}
 a.faster:active span:before,a.faster:active span:after{border-left-color:#333}
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi){html{background:transparent url("/images/cubes_@2X.png") scroll repeat 0 0}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi){html{background:transparent url("/images/cubes_@2X.png") scroll repeat 0 0;background-size:67px 100px}
 }@media only screen and (min-device-width: 320px) and (max-device-width: 480px){body{width:300px;margin-top:10px}
 #gauge{height:300px}
 a.slower{margin-right:2.4em}
