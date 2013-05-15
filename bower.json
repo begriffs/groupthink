@@ -1,16 +1,16 @@
 {
-	"name": "pace",
-	"version": "0.0.1",
-	"dependencies": {
-		"jquery": "~2.0.0",
-		"requirejs": "~2.1.5",
-		"decaying-accumulator": "begriffs/decaying-accumulator",
-		"socket.io-client": "0.9.11",
-		"almond": "0.2.5"
-	},
-	"ignore": [
-		"**/.*",
-		"node_modules",
-		"components"
-	]
+  "name": "pace",
+  "version": "0.0.1",
+  "dependencies": {
+    "jquery": "~2.0.0",
+    "requirejs": "~2.1.5",
+    "decaying-accumulator": "begriffs/decaying-accumulator",
+    "socket.io-client": "0.9.11",
+    "almond": "0.2.5"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ]
 }
