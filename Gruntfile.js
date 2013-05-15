@@ -9,7 +9,7 @@ module.exports = function(grunt) {
     requirejs: {
       compile: {
         options: {
-          name: 'components/almond/almond',
+          name: '../bower/almond/almond',
           include: "main",
           baseUrl: "public/scripts",
           mainConfigFile: "public/scripts/main.js",

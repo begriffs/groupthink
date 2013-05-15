@@ -18,9 +18,9 @@ requirejs.config({
     */
     'eve': 'eve',
     'raphael': 'raphael',
-    'jquery': 'components/jquery/jquery',
-    'socket.io': 'components/socket.io-client/dist/socket.io',
-    'decaying-accumulator': 'components/decaying-accumulator/DecayingAccumulator'
+    'jquery': '../bower/jquery/jquery',
+    'socket.io': '../bower/socket.io-client/dist/socket.io',
+    'decaying-accumulator': '../bower/decaying-accumulator/DecayingAccumulator'
   }
 });
 
