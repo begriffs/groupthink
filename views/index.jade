@@ -4,17 +4,16 @@ html(lang="en")
     meta(charset="utf-8")
     meta(name="viewport", content="width=device-width, initial-scale=1, user-scalable=0")
     link(rel="stylesheet", href='/style/main.css', type="text/css")
+    link(rel="stylesheet", href='/bower/font-awesome/build/assets/font-awesome/css/font-awesome.min.css', type="text/css")
     title Change the Pace
   body
     div#gauge
 
     div#gauge-actions
       a(href="#", class="slower", data-vote="-1")
-        i -1
-        span
+        i.icon-thumbs-down
       a(href="#", class="faster", data-vote="1")
-        i +1
-        span
+        i.icon-thumbs-up
     - if(environment == "production")
       script(src="scripts/optimized.js")
     - else

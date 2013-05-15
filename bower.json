@@ -6,7 +6,8 @@
     "requirejs": "~2.1.5",
     "decaying-accumulator": "begriffs/decaying-accumulator",
     "socket.io-client": "0.9.11",
-    "almond": "0.2.5"
+    "almond": "0.2.5",
+    "font-awesome": "3.1.1"
   },
   "ignore": [
     "**/.*",

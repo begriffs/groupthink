@@ -26,72 +26,27 @@ a
 
 #gauge-actions
   margin-top -20px
-  text-align center
-  position
+  position relative
 
 a.slower,
 a.faster
   font-family helvetica, sans-serif
   display inline-block
-  position relative
-  width: 40px
-  padding 0.6em
-  margin 0
   text-decoration none
-  color #FFF
-  text-shadow #333 1px 1px 0
+  color #666
 
   i
     position absolute
-    top 50%
-    right 0
-    z-index 101
-  span:before, span:after
-    z-index 100
+    font-size 60px
+    bottom 0
 
 a.slower
-  margin-right 3.4em
   i
-    left -16px
-  span:before, span:after
-    position absolute
-    content ""
-    width 0
-    height 0
-    border-top 2em solid transparent
-    border-bottom 2em solid transparent
-    border-right 4em solid #888
-    right 0
-    top -0.9em
-
-  span:before
-    right 2em
-
-a.slower:active
-  span:before, span:after
-    border-right-color #333
+    left 40px
 
 a.faster
-  margin-left 3.4em
   i
-    right 0
-  span:before, span:after
-    position absolute
-    content ""
-    width 0
-    height 0
-    border-top 2em solid transparent
-    border-bottom 2em solid transparent
-    border-left 4em solid #888
-    left 0
-    top -0.9em
-
-  span:after
-    left 2em
-
-a.faster:active
-  span:before, span:after
-    border-left-color #333
+    right 40px
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) 
   /* Retina-specific stuff here */
