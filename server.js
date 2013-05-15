@@ -4,7 +4,7 @@ var express = require('express'),
   mongoose  = require('mongoose'),
   stylus    = require('stylus'),
   io        = require('socket.io').listen(server),
-  dac_truth = new (require('decaying-accumulator'))(40000);
+  dac_truth = new (require('decaying-accumulator'))({decaySpeed: 40000});
 
 mongoose.connect(process.env.MONGO_CONNECTION || 'mongodb://localhost/pace');
 
@@ -45,11 +45,7 @@ app.get('/history', function (req, res) {
 app.get('/status.json', function (req, res) {
   res.set('Content-Type', 'application/json');
   dac_truth.applyDecay(); // update the stats
-  res.send(JSON.stringify({
-    val: dac_truth.val,
-    decaySpeed: dac_truth.decaySpeed,
-    maxValueSeen: dac_truth.maxValueSeen
-  }));
+  res.send(JSON.stringify(dac_truth));
 });
 
 server.listen(8080, function () {
