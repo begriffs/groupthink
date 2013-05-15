@@ -10,9 +10,9 @@ html(lang="en")
     div#gauge
 
     div#gauge-actions
-      a(href="#", class="slower", data-vote="-0.25")
+      a(href="#", class="slower", data-vote="-1")
         i.icon-thumbs-down
-      a(href="#", class="faster", data-vote="0.25")
+      a(href="#", class="faster", data-vote="1")
         i.icon-thumbs-up
     - if(environment == "production")
       script(src="scripts/optimized.js")

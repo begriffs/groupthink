@@ -4,7 +4,7 @@ var express = require('express'),
   mongoose  = require('mongoose'),
   stylus    = require('stylus'),
   io        = require('socket.io').listen(server),
-  dac_truth = new (require('decaying-accumulator'))({decaySpeed: 40000});
+  dac_truth = new (require('decaying-accumulator'))({decaySpeed: 40000, currentScale: 4});
 
 mongoose.connect(process.env.MONGO_CONNECTION || 'mongodb://localhost/pace');
 
