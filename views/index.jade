@@ -10,10 +10,10 @@ html(lang="en")
 
     div#gauge-actions
       a(href="#", class="slower", data-vote="-1") 
-        i Slower
+        i -1
         span 
       a(href="#", class="faster", data-vote="1")
-        i Faster
+        i +1
         span
     - if(environment == "production")
       script(src="scripts/optimized.js")

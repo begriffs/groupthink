@@ -51,30 +51,30 @@ require(['jquery', 'socket.io', 'decaying-accumulator', 'justgage'], function ($
         color : "#ff0000",
         lo : -1,
         hi : -0.8,
-        label: 'way too fast'
+        label: 'hate it'
       }, {
         color : "#fa9001",
         lo : -0.8,
         hi : -0.2,
-        label: 'too fast'
+        label: 'dislike'
       }, {
         color : "#00ff00",
         lo : -0.2,
         hi : 0.2,
-        label: 'ok'
+        label: 'meh'
       }, {
         color : "#fa9001",
         lo : 0.2,
         hi : 0.8,
-        label: 'too slow'
+        label: 'like it'
       }, {
         color : "#ff0000",
         lo : 0.8,
         hi : 1,
-        label: 'way too slow'
+        label: 'love it'
       }
     ],
-    title: "Speed"
+    title: "Liking it?"
   };
 
   $(function () {
