@@ -96,6 +96,7 @@ require(['jquery', 'socket.io', 'decaying-accumulator', 'justgage'], function ($
     var socket = io.connect('http://' + window.location.hostname);
     socket.on('vote', function (data) {
       dac.nudge(data);
+      updateGauge();
     });
 
     $('a[data-vote]').click(function (e) {
