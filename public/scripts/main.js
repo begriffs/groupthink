@@ -80,20 +80,17 @@ require(['jquery', 'socket.io', 'decaying-accumulator', 'justgage'], function ($
   $(function () {
     var dac,
       redrawTolerance = 0.01;
-      speedGauge = new JustGage(gageConfig);
+      speedGauge = new JustGage(gageConfig),
+      updateGauge = function() {
+        var dacCurrentValue = dac.currentValue();
+        if (speedGauge.config.value !== dacCurrentValue) {
+          speedGauge.refresh(dacCurrentValue);
+        }
+      };
 
     $.getJSON('/status.json', function (data) {
       dac = new DecayingAccumulator(data);
-
-      window.setInterval(
-        function () {
-          var dacCurrentValue = dac.currentValue();
-          if (speedGauge.config.value !== dacCurrentValue) {
-            speedGauge.refresh(dacCurrentValue);
-          }
-        },
-        250
-      );
+      window.setInterval(updateGauge, 250);
     });
 
     var socket = io.connect('http://' + window.location.hostname);
@@ -107,6 +104,7 @@ require(['jquery', 'socket.io', 'decaying-accumulator', 'justgage'], function ($
       var vote = $(this).data('vote');
       socket.emit('vote', vote);
       dac.nudge(vote);
+      updateGauge();
     });
   });
 });
