@@ -16,6 +16,7 @@ realtime guage.
 ### Deploying to nodejitsu
 
     npm install
+    bower install
     grunt optimize
     npm install jitsu -g
     jitsu signup
