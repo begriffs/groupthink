@@ -79,15 +79,20 @@ require(['jquery', 'socket.io', 'decaying-accumulator', 'justgage'], function ($
 
   $(function () {
     var dac,
-      speedGage = new JustGage(gageConfig);
+      redrawTolerance = 0.01;
+      speedGauge = new JustGage(gageConfig);
 
     $.getJSON('/status.json', function (data) {
       dac = new DecayingAccumulator(data);
+
       window.setInterval(
         function () {
-          speedGage.refresh(dac.currentValue());
+          var dacCurrentValue = dac.currentValue();
+          if (speedGauge.config.value !== dacCurrentValue) {
+            speedGauge.refresh(dacCurrentValue);
+          }
         },
-        50
+        250
       );
     });
 
