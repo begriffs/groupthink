@@ -49,7 +49,7 @@ require(['jquery', 'socket.io', 'decaying-accumulator', 'justgage'], function ($
     customSectors: [
       {
         color : "#ff0000",
-        lo : -1,
+        lo : -1.01, // because lower bound is exclusive
         hi : -0.8,
         label: 'hate it'
       }, {
