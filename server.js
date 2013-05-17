@@ -1,12 +1,9 @@
 var express = require('express'),
   app       = express(),
   server    = require('http').createServer(app),
-  mongoose  = require('mongoose'),
   stylus    = require('stylus'),
   io        = require('socket.io').listen(server),
   dac_truth = new (require('decaying-accumulator'))({decaySpeed: 40000, currentScale: 4, cooldownSpeed: 10000});
-
-mongoose.connect(process.env.MONGO_CONNECTION || 'mongodb://localhost/pace');
 
 io.sockets.on('connection', function (socket) {
   socket.on('vote', function (data) {

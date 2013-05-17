@@ -1,6 +1,6 @@
 ## Get realtime feedback from a crowd
 
-### Try a [demo]()
+### Try a [demo](http://like.begriffs.com)
 
 This app aggregates a crowd's whim and shows a realtime guage.
 
@@ -21,9 +21,6 @@ Clone this repo, go into its directory and run:
     jitsu signup
     jitsu login
     jitsu apps create your-app
-    jitsu databases create mongo your-db-name
-    # note the connection string provided
-    jitsu env set MONGO_CONNECTION connection-string
     jitsu deploy
 
 ### or run it locally
@@ -31,8 +28,6 @@ Clone this repo, go into its directory and run:
     npm install
     bower install
     grunt precompile
-    brew install mongodb
-    mongod
 
     node server.js
 
