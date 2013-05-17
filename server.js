@@ -10,6 +10,7 @@ mongoose.connect(process.env.MONGO_CONNECTION || 'mongodb://localhost/pace');
 
 io.sockets.on('connection', function (socket) {
   socket.on('vote', function (data) {
+    data = data / (Math.abs(data) || 1);
     dac_truth.nudge(data);
     socket.broadcast.emit('vote', data);
     // TODO: log dac_truth.currentValue(), timestamp, and data
