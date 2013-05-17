@@ -8,6 +8,7 @@ realtime guage.
 
     npm install
     bower install
+    grunt precompile
     brew install mongodb
     mongod
 
@@ -17,7 +18,7 @@ realtime guage.
 
     npm install
     bower install
-    grunt optimize
+    grunt precompile
     npm install jitsu -g
     jitsu signup
     jitsu login

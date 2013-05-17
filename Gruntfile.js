@@ -32,12 +32,24 @@ module.exports = function(grunt) {
           }
         }
       }
+    },
+    stylus: {
+      compile: {
+        files: {
+          'public/style/main.css': [
+            'views/style/reset.styl',
+            'views/style/mixins.styl',
+            'views/style/main.styl'
+          ]
+        }
+      }
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
+  grunt.loadNpmTasks('grunt-contrib-stylus');
 
-  grunt.registerTask('optimize', ['jshint', 'requirejs']);
+  grunt.registerTask('precompile', ['jshint', 'stylus', 'requirejs']);
 
 };
