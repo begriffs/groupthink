@@ -35,3 +35,7 @@ guide](https://www.nodejitsu.com/documentation/features/dns/#individual-plans).
 
     node server.js
 
+### License
+
+Groupthink is Copyright © 2013 Joe Nelson. It is free software, and may
+be redistributed under the terms specified in the LICENSE file.
