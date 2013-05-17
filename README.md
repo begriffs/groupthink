@@ -1,20 +1,18 @@
-## Group voting for presentation speed
+## Get realtime feedback from a crowd
 
-You're watching a talk that is going too slowly. Vote to have the
-speaker go faster This app aggregates the crowd's whim and shows a
-realtime guage.
+### Try a [demo]()
 
-### Running the server locally
+This app aggregates a crowd's whim and shows a realtime guage.
 
-    npm install
-    bower install
-    grunt precompile
-    brew install mongodb
-    mongod
+Ways to use it
+* A meeting bullshit meter
+* Feedback for your public speaking
+* Rating karaoke
+* Gong show
 
-    node server.js
+### Deploy your own groupthink server
 
-### Deploying to nodejitsu
+Clone this repo, go into its directory and run:
 
     npm install
     bower install
@@ -27,3 +25,14 @@ realtime guage.
     # note the connection string provided
     jitsu env set MONGO_CONNECTION connection-string
     jitsu deploy
+
+### or run it locally
+
+    npm install
+    bower install
+    grunt precompile
+    brew install mongodb
+    mongod
+
+    node server.js
+
