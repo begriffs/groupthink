@@ -2,6 +2,7 @@
 
 ### Try a [demo](http://like.begriffs.com)
 
+<img src="illustration/logo.png" alt="Groupthink Logo" align="right" />
 This app aggregates a crowd's whim and shows a realtime guage.
 
 Ways to use it
