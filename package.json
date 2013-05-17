@@ -1,7 +1,7 @@
 {
   "name": "groupthink",
-  "description": "crowd voting for presentation speed",
-  "version": "0.0.7",
+  "description": "crowd voting",
+  "version": "0.0.8",
   "private": true,
   "dependencies": {
     "express": "3.2.2",

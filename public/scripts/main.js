@@ -99,6 +99,10 @@ require(['jquery', 'socket.io', 'decaying-accumulator', 'justgage'], function ($
       updateGauge();
     });
 
+    socket.on('audience_change', function (data) {
+      $("span.count").text(data);
+    });
+
     $('a[data-vote]').click(function (e) {
       e.preventDefault();
 

@@ -3,9 +3,20 @@ var express = require('express'),
   server    = require('http').createServer(app),
   stylus    = require('stylus'),
   io        = require('socket.io').listen(server),
+  num_users = 0,
   dac_truth = new (require('decaying-accumulator'))({decaySpeed: 40000, currentScale: 4, cooldownSpeed: 10000});
 
 io.sockets.on('connection', function (socket) {
+  num_users += 1;
+  socket.broadcast.emit('audience_change', num_users);
+  socket.emit('audience_change', num_users);
+
+  socket.on("disconnect", function () {
+    num_users -= 1;
+    socket.broadcast.emit('audience_change', num_users);
+    socket.emit('audience_change', num_users);
+  });
+
   socket.on('vote', function (data) {
     data = data / (Math.abs(data) || 1);
     dac_truth.nudge(data);

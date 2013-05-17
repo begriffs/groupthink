@@ -14,6 +14,9 @@ html(lang="en")
         i.icon-thumbs-down
       a(href="#", class="faster", data-vote="1")
         i.icon-thumbs-up
+      span.count 1
+      |  connected users
+
     - if(environment == "production")
       script(src="scripts/optimized.js")
     - else
