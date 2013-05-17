@@ -5,7 +5,7 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, initial-scale=1, user-scalable=0")
     link(rel="stylesheet", href='/style/main.css', type="text/css")
     link(rel="stylesheet", href='/bower/font-awesome/build/assets/font-awesome/css/font-awesome.min.css', type="text/css")
-    title Change the Pace
+    title Group Voting
   body
     div#gauge
 
@@ -18,3 +18,7 @@ html(lang="en")
       script(src="scripts/optimized.js")
     - else
       script(data-main="scripts/main", src="scripts/require.js")
+
+    div#powered
+      | Powered by 
+      a(href="https://github.com/begriffs/groupthink", target="_blank") begriffs/groupthink
