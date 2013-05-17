@@ -23,6 +23,9 @@ Clone this repo, go into its directory and run:
     jitsu apps create your-app
     jitsu deploy
 
+Configure the DNS by following [this
+guide](https://www.nodejitsu.com/documentation/features/dns/#individual-plans).
+
 ### or run it locally
 
     npm install
