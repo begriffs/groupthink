@@ -7,20 +7,21 @@ html(lang="en")
     link(rel="stylesheet", href='/bower/font-awesome/build/assets/font-awesome/css/font-awesome.min.css', type="text/css")
     title Group Voting
   body
-    div#gauge
+    div.controls
+      div#gauge
 
-    div#gauge-actions
-      a(href="#", class="slower", data-vote="-1")
-        i.icon-thumbs-down
-      a(href="#", class="faster", data-vote="1")
-        i.icon-thumbs-up
-      span.count 1
-      |  connected users
+      div#gauge-actions
+        a(href="#", class="slower", data-vote="-1")
+          i.icon-thumbs-down
+        a(href="#", class="faster", data-vote="1")
+          i.icon-thumbs-up
+        span.count 1
+        |  connected users
 
-    - if(environment == "production")
-      script(src="scripts/optimized.js")
-    - else
-      script(data-main="scripts/main", src="scripts/require.js")
+      - if(environment == "production")
+        script(src="scripts/optimized.js")
+      - else
+        script(data-main="scripts/main", src="scripts/require.js")
 
     div#powered
       | Powered by 
