@@ -60,17 +60,27 @@ a.faster
     background transparent url('/images/cubes_@2X.png') scroll repeat 0 0;
     background-size: 67px 100px;
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px)
-  body
+@media only screen and (max-width: 480px)
+  .controls
     width 300px
     margin-top 10px
 
   #gauge
-    height 300px
+    height 216px
     width 270px
 
+  #gauge-actions
+    margin-top -30px
+    line-height 40px
+
+  a.slower, a.faster
+    i
+      font-size 40px
+
   a.slower
-    margin-right 2.4em
+    i
+      left 35px
 
   a.faster
-    margin-left 2.4em
+    i
+      right 35px
