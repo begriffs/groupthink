@@ -43,12 +43,27 @@ module.exports = function(grunt) {
           ]
         }
       }
+    },
+    watch: {
+      lint: {
+        files: ['*.js', 'public/scripts/main.js'],
+        tasks: 'jshint'
+      },
+      compile_js: {
+        files: ['*.js', 'public/scripts/main.js'],
+        tasks: 'requirejs'
+      },
+      compile_stylus: {
+        files: ['views/style/reset.styl', 'views/style/mixins.styl', 'views/style/main.styl'],
+        tasks: 'stylus'
+      }
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.loadNpmTasks('grunt-contrib-stylus');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
   grunt.registerTask('precompile', ['jshint', 'stylus', 'requirejs']);
 

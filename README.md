@@ -35,6 +35,10 @@ guide](https://www.nodejitsu.com/documentation/features/dns/#individual-plans).
 
     node server.js
 
+To recompile assets automatically as you work, run
+
+    grunt watch
+
 ### License
 
 Groupthink is Copyright © 2013 Joe Nelson. It is free software, and may
