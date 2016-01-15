@@ -8,7 +8,8 @@
     "jade": "0.30.0",
     "socket.io": "0.9.14",
     "stylus": "0.32.1",
-    "decaying-accumulator": "0.1.2"
+    "decaying-accumulator": "0.1.2",
+    "bower": "latest"
   },
   "devDependencies": {
     "grunt": "0.4.1",
@@ -22,6 +23,7 @@
     "npm": "1.2.x"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "postinstall": "bower cache clean && bower install && grunt precompile"
   }
 }
