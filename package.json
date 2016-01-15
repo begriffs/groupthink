@@ -12,14 +12,14 @@
     "bower": "latest"
   },
   "devDependencies": {
-    "grunt": "0.4.1",
-    "grunt-contrib-requirejs": "0.4.0",
-    "grunt-contrib-jshint": "0.4.3",
-    "grunt-contrib-stylus": "0.5.0",
-    "grunt-contrib-watch": "0.4.3"
+    "grunt": "latest",
+    "grunt-contrib-requirejs": "latest",
+    "grunt-contrib-jshint": "latest",
+    "grunt-contrib-stylus": "latest",
+    "grunt-contrib-watch": "latest"
   },
   "engines": {
-    "node": "0.8.x",
+    "node": "4.2.4",
     "npm": "1.2.x"
   },
   "scripts": {
